@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <attr format="enum" name="button_style">
+    <enum name="PrimaryWhite" value="1000"/>
+    <enum name="PrimaryBlue" value="1001"/>
+    <enum name="PrimaryIcon" value="1002"/>
+  </attr>
+
+
+  <declare-styleable name="Button">
+    <attr name="button_style"/>
+  </declare-styleable>
+
+</resources>

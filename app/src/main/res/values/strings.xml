@@ -1,0 +1,21 @@
+<resources>
+  <string name="app_name">Example</string>
+
+
+  <string name="labels">Labels</string>
+  <string name="colors">Colors</string>
+  <string name="buttons">Buttons</string>
+
+  <string name="display_big">Display Big</string>
+  <string name="display">Display</string>
+  <string name="h1_black">H1 Black</string>
+  <string name="h2_black">H2 Black</string>
+  <string name="h3_black">H3 Black</string>
+  <string name="h3_pink">H3 Pink</string>
+  <string name="input_error">Input Errork</string>
+  <string name="big_33">Big 33</string>
+  <string name="link">Link</string>
+
+
+
+</resources>

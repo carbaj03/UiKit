@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <LinearLayout
+      android:id="@+id/container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+
+    <com.fintonic.uikit.button.Button
+        android:id="@+id/lblDisplayBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/display_big"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        app:button_style="PrimaryBlue"
+        />
+
+    <com.fintonic.uikit.button.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="@string/display"
+        app:button_style="PrimaryBlue"
+        />
+
+    <com.fintonic.uikit.button.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:text="@string/h1_black"
+        app:button_style="PrimaryBlue"
+        />
+
+    <com.fintonic.uikit.button.Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/h2_black"
+        app:button_style="PrimaryBlue"
+        />
+
+    <com.fintonic.uikit.button.Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/h3_black"
+        app:button_style="PrimaryBlue"
+        />
+
+    <LinearLayout
+        android:id="@+id/labelProgrammaticallly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        />
+  </LinearLayout>
+
+</ScrollView>

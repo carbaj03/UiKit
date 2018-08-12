@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="button_radius">30dp</dimen>
+  <dimen name="button_stroke">1dp</dimen>
+
+</resources>

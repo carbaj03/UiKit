@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <LinearLayout
+      android:id="@+id/container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+
+    <com.fintonic.uikit.label.Label
+        android:id="@+id/lblDisplayBig"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/display_big"
+        app:label_style="DisplayBig"
+        />
+
+    <com.fintonic.uikit.label.Label
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/display"
+        app:label_style="Display"
+        />
+
+    <com.fintonic.uikit.label.Label
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/h1_black"
+        app:label_style="H1Black"
+        />
+
+    <com.fintonic.uikit.label.Label
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/h2_black"
+        app:label_style="H2Black"
+        />
+
+    <com.fintonic.uikit.label.Label
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/h3_black"
+        app:label_style="H3Black"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/labelProgrammaticallly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        />
+  </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <attr format="enum" name="label_style">
+    <enum name="DisplayBig" value="1000"/>
+    <enum name="Display" value="1001"/>
+
+    <enum name="H1Black" value="2100"/>
+    <enum name="H2Black" value="2200"/>
+    <enum name="H3Black" value="2300"/>
+    <enum name="H3Gray" value="2301"/>
+    <enum name="H3Green" value="2302"/>
+    <enum name="H3Pink" value="2303"/>
+
+    <enum name="BodyBlack" value="3000"/>
+    <enum name="BodyGray" value="3001"/>
+
+    <enum name="LinkBlueBig" value="4100"/>
+    <enum name="LinkBlueSmall" value="4200"/>
+    <enum name="LinkSecondary" value="4300"/>
+    <enum name="LinkDisabled" value="4400"/>
+    <enum name="LinkWhite" value="4000"/>
+    <enum name="LinkGreen" value="4001"/>
+
+    <enum name="Micro1BlackRegular" value="5000"/>
+    <enum name="Micro1Black" value="5100"/>
+    <enum name="Micro1Gray" value="5101"/>
+    <enum name="Micro2Black" value="5200"/>
+    <enum name="Micro2Gray" value="5201"/>
+    <enum name="Micro2GrayRegular" value="5202"/>
+
+    <enum name="InputError" value="6000"/>
+
+    <enum name="Big50" value="7050"/>
+    <enum name="Big33" value="7033"/>
+  </attr>
+
+
+  <item name="DisplayBigInt" type="integer">1</item>
+
+  <declare-styleable name="Label">
+    <attr name="label_style"/>
+  </declare-styleable>
+
+</resources>

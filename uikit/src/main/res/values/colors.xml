@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!--Brand palette-->
+  <color name="fucsia">#FF44A0</color>
+  <color name="blue">#1F7CFF</color>
+  <color name="gum">#FE6680</color>
+  <color name="navy">#133273</color>
+  <color name="yellow">#FFC442</color>
+  <color name="aquamarine">#BFF3F5</color>
+  <color name="pink">#FFD5D7</color>
+  <color name="baby_blue">#BED5FF</color>
+  <color name="white">#FFFFFF</color>
+
+  <!--Gray scale-->
+  <color name="cloudy_gray">#F3F6F9</color>
+  <color name="light_gray">#CFDAE6</color>
+  <color name="gray">#929FAD</color>
+  <color name="dark_gray">#4B5D72</color>
+
+  <!--secondary-->
+  <color name="red">#FF0000</color>
+  <color name="green">#0CC057</color>
+  <color name="light_yellow">#FDEECF</color>
+
+  <!--clicked-->
+  <color name="click_blue">#388BFF</color>
+  <color name="click_gum">#FF8095</color>
+  <color name="click_green">#25D366</color>
+  <color name="click_white">#30FFFFFF</color>
+</resources>
