@@ -48,10 +48,10 @@ class Factory(
 ) : FactoryResource {
 
     override fun getModels() = listOf(
-            LabelModel(InputError, textParse.textParser(R.string.input_error)),
-            LabelModel(Big33, textParse.textParser(R.string.big_33)),
-            LabelModel(H1Black, textParse.textParser(R.string.h1_black)),
-            LabelModel(H3Pink, textParse.textParser(R.string.h3_pink)),
-            LabelModel(H3Pink, textParse.textParser("<i>H3 Pink from String<i>")),
-            LabelModel(LinkBlueBig, textParse.textParser(R.string.link), Eval { view.showAlert("Hola") }.some()))
+            LabelModel(InputError, textParse.textParserResource(R.string.input_error)),
+            LabelModel(Big33, textParse.textParserResource(R.string.big_33)),
+            LabelModel(H1Black, textParse.textParserResource(R.string.h1_black)),
+            LabelModel(H3Pink, textParse.textParserResource(R.string.h3_pink)),
+            LabelModel(H3Pink, textParse.textParserHtml("<i>H3 Pink from String<i>")),
+            LabelModel(LinkBlueBig, textParse.textParserString("Link Blue from String"), Eval { view.showAlert("Hola") }.some()))
 }

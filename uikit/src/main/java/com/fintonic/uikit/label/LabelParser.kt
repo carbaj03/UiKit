@@ -1,6 +1,7 @@
 package com.fintonic.uikit.label
 
 import android.content.Context
+import android.support.annotation.StringRes
 import android.text.Html.fromHtml
 import com.fintonic.uikit.common.text.FromHtml
 import com.fintonic.uikit.common.text.FromResource
@@ -20,6 +21,15 @@ class TextParse(private val context: Context) {
                 is FromHtml -> fromHtml(this.value)
                 is FromResource -> this.context.getText(this.value)
             }
+
+    fun textParserResource(@StringRes toParse: Int): CharSequence =
+            FromResource(toParse, context).toCharSequence()
+
+    fun textParserString(toParse: String): CharSequence =
+            FromString(toParse).toCharSequence()
+
+    fun textParserHtml(toParse: String): CharSequence =
+            FromHtml(toParse).toCharSequence()
 
     fun <M> textParser(toParse: M): CharSequence =
             when (toParse) {
