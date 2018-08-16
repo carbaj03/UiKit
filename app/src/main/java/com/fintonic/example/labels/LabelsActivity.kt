@@ -7,6 +7,7 @@ import com.fintonic.example.R
 import com.fintonic.uikit.common.Eval
 import com.fintonic.uikit.common.some
 import com.fintonic.uikit.label.*
+import com.fintonic.uikit.text.TextParse
 import kotlinx.android.synthetic.main.activity_labels.*
 
 class LabelsActivity : AppCompatActivity(), LabelsView {

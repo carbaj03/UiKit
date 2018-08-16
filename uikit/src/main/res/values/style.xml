@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+  <style name="Button" parent="Widget.AppCompat.Button">
+    <item name="colorButtonNormal">@color/blue</item>
+    <item name="colorControlNormal">@color/blue</item>
+    <item name="colorControlActivated">@color/blue</item>
+    <item name="android:colorBackground">@color/blue</item>
+    <item name="colorAccent">@color/blue</item>
+    <item name="android:textColor">@color/blue</item>
+  </style>
 
 </resources>

@@ -3,4 +3,6 @@
   <dimen name="button_radius">30dp</dimen>
   <dimen name="button_stroke">1dp</dimen>
 
+  <dimen name="button_padding">20dp</dimen>
+
 </resources>

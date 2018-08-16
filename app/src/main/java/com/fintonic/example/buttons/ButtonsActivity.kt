@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.fintonic.example.R
 import com.fintonic.uikit.button.*
+import com.fintonic.uikit.button.fab.ActionButtonModel
+import com.fintonic.uikit.button.fab.ActionButtonStyle
+import com.fintonic.uikit.button.fab.Arrow
 import com.fintonic.uikit.common.Eval
 import com.fintonic.uikit.common.some
-import com.fintonic.uikit.label.*
-import com.fintonic.uikit.label.TextParse
+import com.fintonic.uikit.text.*
 import kotlinx.android.synthetic.main.activity_buttons.*
 
 class ButtonsActivity : AppCompatActivity(), ButtonsView {
@@ -26,7 +28,8 @@ class ButtonsActivity : AppCompatActivity(), ButtonsView {
         presenter.loadLabels()
 
         //Modify xml label
-        lblDisplayBig.render(ButtonModel(PrimaryIcon, "Label Modify by code"))
+        btnDisplayBig.render(ButtonModel(PrimaryWhite, "Label Modify by code".toButtonText()))
+        btnArrow.render(ActionButtonModel(Arrow, Eval { Toast.makeText(baseContext, "sf", Toast.LENGTH_SHORT).show() }.some()))
     }
 
     override fun showLabels(labels: List<ButtonModel>) =
@@ -34,11 +37,9 @@ class ButtonsActivity : AppCompatActivity(), ButtonsView {
                 labelProgrammaticallly.addView(Button(this).render(it))
             }
 
-
     override fun showAlert(s: String) =
             Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
 }
-
 
 interface FactoryResource {
     fun getModels(): List<ButtonModel>
@@ -51,11 +52,11 @@ class Factory(
 
     override fun getModels(): List<ButtonModel> =
             listOf(
-                    ButtonModel(PrimaryBlue, textParse.textParser(R.string.input_error)),
-                    ButtonModel(PrimaryWhite, textParse.textParser(R.string.big_33)),
-                    ButtonModel(PrimaryWhite, textParse.textParser(R.string.h1_black)),
-                    ButtonModel(PrimaryWhite, textParse.textParser(R.string.h3_pink)),
-                    ButtonModel(PrimaryWhite, textParse.textParser("<i>H3 Pink from String<i>")),
-                    ButtonModel(PrimaryWhite, textParse.textParser(R.string.link), Eval { view.showAlert("Hola") }.some()))
+                    ButtonModel(PrimaryBlue, textParse.textParserResource(R.string.input_error).toButtonText()),
+                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.big_33).toButtonText()),
+                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.h1_black).toButtonText()),
+                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.h3_pink).toButtonText()),
+                    ButtonModel(PrimaryWhite, textParse.textParserHtml("<i>H3 Pink from String<i>").toButtonText()),
+                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.link).toButtonText(), Eval { view.showAlert("Hola") }.some()))
 
 }

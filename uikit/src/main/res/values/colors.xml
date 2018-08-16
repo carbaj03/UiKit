@@ -11,6 +11,7 @@
   <color name="pink">#FFD5D7</color>
   <color name="baby_blue">#BED5FF</color>
   <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
 
   <!--Gray scale-->
   <color name="cloudy_gray">#F3F6F9</color>

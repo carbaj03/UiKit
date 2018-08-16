@@ -2,14 +2,44 @@
 <resources>
 
   <attr format="enum" name="button_style">
-    <enum name="PrimaryWhite" value="1000"/>
-    <enum name="PrimaryBlue" value="1001"/>
+    <enum name="PrimaryBlue" value="1000"/>
+    <enum name="PrimaryWhite" value="1001"/>
     <enum name="PrimaryIcon" value="1002"/>
   </attr>
 
+  <attr format="enum" name="button_icon_style">
+    <enum name="Whatsapp" value="1000"/>
+  </attr>
+
+  <attr format="enum" name="button_action_style">
+    <enum name="Arrow" value="1000"/>
+  </attr>
+
+  <attr format="enum" name="text_strategy">
+    <enum name="Capitalize" value="1"/>
+    <enum name="UpperCase" value="2"/>
+    <enum name="LowerCase" value="3"/>
+    <enum name="Normal" value="4"/>
+  </attr>
+
+  <attr format="enum" name="state">
+    <enum name="Disabled" value="1"/>
+    <enum name="Enabled" value="2"/>
+  </attr>
 
   <declare-styleable name="Button">
     <attr name="button_style"/>
+    <attr name="text_strategy"/>
+  </declare-styleable>
+
+  <declare-styleable name="ButtonIcon">
+    <attr name="button_icon_style"/>
+    <attr name="text_strategy"/>
+  </declare-styleable>
+
+  <declare-styleable name="ButtonAction">
+    <attr name="button_action_style"/>
+    <attr name="state"/>
   </declare-styleable>
 
 </resources>

@@ -13,18 +13,17 @@
       >
 
     <com.fintonic.uikit.button.Button
-        android:id="@+id/lblDisplayBig"
+        android:id="@+id/btnDisplayBig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/display_big"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         app:button_style="PrimaryBlue"
         />
 
     <com.fintonic.uikit.button.Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:enabled="false"
         android:text="@string/display"
         app:button_style="PrimaryBlue"
         />
@@ -32,7 +31,6 @@
     <com.fintonic.uikit.button.Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.Button.Small"
         android:text="@string/h1_black"
         app:button_style="PrimaryBlue"
         />
@@ -41,14 +39,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/h2_black"
-        app:button_style="PrimaryBlue"
         />
 
     <com.fintonic.uikit.button.Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/h3_black"
+        app:text_strategy="LowerCase"
         app:button_style="PrimaryBlue"
+        />
+
+    <com.fintonic.uikit.button.icon.ButtonIcon
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/whatsapp"
+        app:text_strategy="LowerCase"
+        app:button_icon_style="Whatsapp"
+        />
+
+    <com.fintonic.uikit.button.fab.ActionButton
+        android:id="@+id/btnArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:button_action_style="Arrow"
+        />
+
+    <com.fintonic.uikit.button.fab.ActionButton
+        android:id="@+id/btnArrowDisabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:button_action_style="Arrow"
         />
 
     <LinearLayout

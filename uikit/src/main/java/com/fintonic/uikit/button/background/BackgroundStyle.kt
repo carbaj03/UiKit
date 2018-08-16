@@ -8,5 +8,6 @@ sealed class BackgroundStyle(
         open val resource: Int
 ) : Style
 
-object RoundedBlue : BackgroundStyle(1000, R.drawable.btn_selector_primary)
-object RoundedWhite : BackgroundStyle(1001, R.drawable.btn_selector_primary)
+object RoundedBlue : BackgroundStyle(1000, R.drawable.btn_primary_blue_selector)
+object RoundedWhite : BackgroundStyle(1001, R.drawable.btn_primary_white_selector)
+object RoundedGreen : BackgroundStyle(1002, R.drawable.btn_whatsapp_selector)

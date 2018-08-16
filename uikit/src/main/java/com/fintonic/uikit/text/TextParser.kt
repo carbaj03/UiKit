@@ -1,4 +1,4 @@
-package com.fintonic.uikit.label
+package com.fintonic.uikit.text
 
 import android.content.Context
 import android.support.annotation.StringRes
@@ -30,11 +30,4 @@ class TextParse(private val context: Context) {
 
     fun textParserHtml(toParse: String): CharSequence =
             FromHtml(toParse).toCharSequence()
-
-    fun <M> textParser(toParse: M): CharSequence =
-            when (toParse) {
-                is Int -> FromResource(toParse, context).toCharSequence()
-                is String -> FromString(toParse).toCharSequence()
-                else -> throw Exception("")
-            }
 }
