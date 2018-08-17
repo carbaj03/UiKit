@@ -4,22 +4,25 @@ import com.fintonic.uikit.common.Eval
 import com.fintonic.uikit.common.Model
 import com.fintonic.uikit.common.None
 import com.fintonic.uikit.common.Option
-import com.fintonic.uikit.text.*
 
-sealed class BaseButtonModel(
+sealed class ButtonModel(
         open val style: ButtonStyle,
-        open val value: ButtonText,
         open val f: Option<Eval> = None
 ) : Model
 
 data class ButtonIconModel(
         override val style: ButtonIconStyle,
-        override val value: ButtonText,
+        val value: ButtonText,
         override val f: Option<Eval> = None
-) : BaseButtonModel(style, value, f)
+) : ButtonModel(style, f)
 
-data class ButtonModel(
-        override val style: ButtonStyle,
-        override val value: ButtonText,
+data class ButtonTextModel(
+        override val style: ButtonTextStyle,
+        val value:  ButtonText,
         override val f: Option<Eval> = None
-) : BaseButtonModel(style, value, f)
+) : ButtonModel(style, f)
+
+data class ActionButtonModel(
+        override val style: ActionButtonStyle,
+        override val f: Option<Eval> = None
+) : ButtonModel(style, f)

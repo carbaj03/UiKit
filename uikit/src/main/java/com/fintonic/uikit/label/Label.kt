@@ -14,7 +14,7 @@ class Label @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0
-) : AppCompatTextView(context, attrs, defStyleAttr), Errorable, Component<LabelModel> {
+) : AppCompatTextView(context, attrs, defStyleAttr), Errorable, LabelComponent<LabelModel> {
     var value
         get() = text.toString()
         set(value) {

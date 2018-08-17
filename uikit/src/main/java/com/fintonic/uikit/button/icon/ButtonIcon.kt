@@ -14,7 +14,7 @@ import com.fintonic.uikit.text.idToStrategy
 class ButtonIcon @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null
-) : AppCompatButton(context, attrs), Errorable, Component<ButtonIconModel> {
+) : AppCompatButton(context, attrs), ButtonComponent<ButtonIconModel> {
     var value
         get() = text.toString()
         set(value) {
@@ -41,12 +41,19 @@ class ButtonIcon @JvmOverloads constructor(
     }
 
     override fun render(model: ButtonIconModel) = apply {
-        setUp(model)
-        setCompoundDrawablesWithIntrinsicBounds(model.style.icon.resource, 0,0,0)
-        model.f.map { action -> setOnClickListener { action.f() } }
-    }
+        with(model.style) {
+            setPadding(resources.getDimensionPixelOffset(dimens.padding), 0, resources.getDimensionPixelOffset(dimens.padding), 0)
+            setBackgroundResource(background.resource)
 
-    override fun error(value: String) {
-        this.error = value
+            setAllCaps(false)
+            setTextColor(style.labelStyle.color.getColor(context))
+            setTextSize(style.labelStyle.dimens.unit, style.labelStyle.dimens.size)
+            typeface = style.labelStyle.font.getFont(context)
+            text = model.value.transform()
+        }
+
+        setCompoundDrawablesWithIntrinsicBounds(model.style.icon.resource, 0,0,0)
+
+        model.f.map { action -> setOnClickListener { action.f() } }
     }
 }

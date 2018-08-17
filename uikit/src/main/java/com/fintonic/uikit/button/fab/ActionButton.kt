@@ -1,26 +1,19 @@
 package com.fintonic.uikit.button.fab
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.content.res.TypedArray
-import android.content.res.XmlResourceParser
-import android.graphics.Color
-import android.support.design.widget.FloatingActionButton
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
+import android.support.v7.widget.AppCompatButton
 import android.util.AttributeSet
 import com.fintonic.uikit.R
-import com.fintonic.uikit.common.Component
-import com.fintonic.uikit.common.None
-import com.fintonic.uikit.common.Option
-import com.fintonic.uikit.common.some
-import org.xmlpull.v1.XmlPullParser
+import com.fintonic.uikit.button.ActionButtonModel
+import com.fintonic.uikit.button.Arrow
+import com.fintonic.uikit.common.*
 
 
 class ActionButton @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null
-) : FloatingActionButton(context, attrs), Component<ActionButtonModel> {
+) : AppCompatButton(context, attrs), ButtonComponent<ActionButtonModel> {
 
     val style: Option<ActionButtonModel>
 
@@ -41,15 +34,14 @@ class ActionButton @JvmOverloads constructor(
     }
 
     override fun render(model: ActionButtonModel) = apply {
-        setImageResource(model.style.icon.resource)
+        with(model.style) {
+            setPadding(resources.getDimensionPixelOffset(dimens.padding), 0, resources.getDimensionPixelOffset(dimens.padding), 0)
+            setBackgroundResource(background.resource)
+        }
 
-        backgroundTintList = resources.getColorStateList(R.color.green)
-//        backgroundTintList = ColorStateList(arrayOf(intArrayOf(android.R.attr.state_enabled)), intArrayOf(R.color.red))
-//                model.style.background.resource.getColor(context))
-//        rippleColor = model.style.background.tint.getColor(context)
-        DrawableCompat.setTint(drawable, model.style.icon.color.getColor(context))
+        setCompoundDrawablesWithIntrinsicBounds(model.style.icon.resource, 0,0,0)
+
         model.f.map { action -> setOnClickListener { action.f() } }
-
 
     }
 

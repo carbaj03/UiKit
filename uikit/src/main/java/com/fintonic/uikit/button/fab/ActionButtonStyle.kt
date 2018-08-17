@@ -9,11 +9,5 @@ import com.fintonic.uikit.common.Style
 import com.fintonic.uikit.icons.ArrowIcon
 import com.fintonic.uikit.icons.IconStyle
 
-sealed class ActionButtonStyle(
-         open val id: Int,
-         open val background: BackgroundColorStyle,
-         val icon : IconStyle
-) : Style
 
-object Arrow : ActionButtonStyle(1000, Arrow, ArrowIcon)
 

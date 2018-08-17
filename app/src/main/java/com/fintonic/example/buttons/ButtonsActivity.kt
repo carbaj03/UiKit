@@ -5,12 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.fintonic.example.R
 import com.fintonic.uikit.button.*
-import com.fintonic.uikit.button.fab.ActionButtonModel
-import com.fintonic.uikit.button.fab.ActionButtonStyle
-import com.fintonic.uikit.button.fab.Arrow
 import com.fintonic.uikit.common.Eval
 import com.fintonic.uikit.common.some
-import com.fintonic.uikit.text.*
+import com.fintonic.uikit.text.TextParse
 import kotlinx.android.synthetic.main.activity_buttons.*
 
 class ButtonsActivity : AppCompatActivity(), ButtonsView {
@@ -28,7 +25,7 @@ class ButtonsActivity : AppCompatActivity(), ButtonsView {
         presenter.loadLabels()
 
         //Modify xml label
-        btnDisplayBig.render(ButtonModel(PrimaryWhite, "Label Modify by code".toButtonText()))
+        btnDisplayBig.render(ButtonTextModel(PrimaryWhite, "Label Modify by code".toButtonText()))
         btnArrow.render(ActionButtonModel(Arrow, Eval { Toast.makeText(baseContext, "sf", Toast.LENGTH_SHORT).show() }.some()))
     }
 
@@ -52,11 +49,12 @@ class Factory(
 
     override fun getModels(): List<ButtonModel> =
             listOf(
-                    ButtonModel(PrimaryBlue, textParse.textParserResource(R.string.input_error).toButtonText()),
-                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.big_33).toButtonText()),
-                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.h1_black).toButtonText()),
-                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.h3_pink).toButtonText()),
-                    ButtonModel(PrimaryWhite, textParse.textParserHtml("<i>H3 Pink from String<i>").toButtonText()),
-                    ButtonModel(PrimaryWhite, textParse.textParserResource(R.string.link).toButtonText(), Eval { view.showAlert("Hola") }.some()))
+                    ButtonTextModel(PrimaryBlue, textParse.textParserResource(R.string.input_error).toButtonText()),
+                    ButtonTextModel(PrimaryWhite, textParse.textParserResource(R.string.big_33).toButtonText()),
+                    ButtonIconModel(Whatsapp, textParse.textParserResource(R.string.big_33).toButtonText()),
+                    ButtonTextModel(PrimaryWhite, textParse.textParserResource(R.string.h1_black).toButtonText()),
+                    ButtonTextModel(PrimaryWhite, textParse.textParserResource(R.string.h3_pink).toButtonText()),
+                    ButtonTextModel(PrimaryWhite, textParse.textParserHtml("<i>H3 Pink from String<i>").toButtonText()),
+                    ButtonTextModel(PrimaryWhite, textParse.textParserResource(R.string.link).toButtonText(), Eval { view.showAlert("Hola") }.some()))
 
 }

@@ -1,12 +1,11 @@
 package com.fintonic.uikit.button
 
-import com.fintonic.uikit.button.background.BackgroundStyle
-import com.fintonic.uikit.button.background.RoundedBlue
-import com.fintonic.uikit.button.background.RoundedGreen
-import com.fintonic.uikit.button.background.RoundedWhite
+import com.fintonic.uikit.button.background.*
+import com.fintonic.uikit.button.background.Arrow
 import com.fintonic.uikit.common.Style
 import com.fintonic.uikit.dimens.DimensButton
 import com.fintonic.uikit.dimens.PrimaryBlueDimen
+import com.fintonic.uikit.icons.ArrowIcon
 import com.fintonic.uikit.icons.IconStyle
 import com.fintonic.uikit.icons.WhatsappIcon
 import com.fintonic.uikit.label.LabelStyle
@@ -14,29 +13,40 @@ import com.fintonic.uikit.label.LinkWhite
 import com.fintonic.uikit.label.Micro1BlackRegular
 
 sealed class ButtonStyle(
-         open val id: Int,
-         open val labelStyle: LabelStyle,
-         open val background: BackgroundStyle,
-         open val dimens: DimensButton
+        open val id: Int,
+        open val background: BackgroundStyle,
+        open val dimens: DimensButton
 ) : Style
+
+
+sealed class ButtonTextStyle(
+        override val id: Int,
+        override val background: BackgroundStyle,
+        override val dimens: DimensButton,
+        val labelStyle: LabelStyle
+) : ButtonStyle(id, background, dimens)
+
+object PrimaryBlue : ButtonTextStyle(1000, RoundedBlue, PrimaryBlueDimen, LinkWhite)
+object PrimaryWhite : ButtonTextStyle(1001, RoundedWhite, PrimaryBlueDimen, Micro1BlackRegular)
+object PrimaryGreen : ButtonTextStyle(1002, RoundedGreen, PrimaryBlueDimen, LinkWhite)
 
 sealed class ButtonIconStyle(
         override val id: Int,
-        val buttonStyle: ButtonStyle,
-        val icon : IconStyle
-) : ButtonStyle(id, buttonStyle.labelStyle, buttonStyle.background, buttonStyle.dimens)
+        val style: ButtonTextStyle,
+        val icon: IconStyle
+) : ButtonStyle(id, style.background, style.dimens)
 
-object Whatsapp : ButtonIconStyle(1000, PrimaryGreen,  WhatsappIcon)
+object Whatsapp : ButtonIconStyle(1000, PrimaryGreen, WhatsappIcon)
 
-object PrimaryBlue : ButtonStyle(1000, LinkWhite, RoundedBlue, PrimaryBlueDimen)
-object PrimaryWhite : ButtonStyle(1001, Micro1BlackRegular, RoundedWhite, PrimaryBlueDimen)
-object PrimaryGreen : ButtonStyle(1002, LinkWhite, RoundedGreen, PrimaryBlueDimen)
 
-//object PrimaryIcon : ButtonStyle(1002, LinkWhite, RoundedBlue, PrimaryBlueDimen)
-object GostBlue : ButtonStyle(2000, LinkWhite, RoundedBlue, PrimaryBlueDimen)
-object GostWhite : ButtonStyle(2001, LinkWhite, RoundedBlue, PrimaryBlueDimen)
+sealed class ActionButtonStyle(
+        override val id: Int,
+        override val background: BackgroundColorStyle,
+        override val dimens: DimensButton,
+        val icon: IconStyle
+) : ButtonStyle(id, background, dimens)
 
-//object GostIcon : ButtonStyle(2002, LinkWhite, RoundedBlue, PrimaryBlueDimen)
+object Arrow : ActionButtonStyle(1000, Arrow, PrimaryBlueDimen, ArrowIcon)
 
-object Secondary : ButtonStyle(3000, LinkWhite, RoundedBlue, PrimaryBlueDimen)
+
 
